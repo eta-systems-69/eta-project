@@ -7,15 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Styles -->
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="css/bootstrap-slider.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/feather.min.js"></script>
 
@@ -25,9 +21,9 @@
 </head>
 <body>
     <div class="page-container">
-        <div class="content-container h-100">
+        <div class="content-container">
             <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-                <a class="navbar-brand" href="#">Sales Orders</a>
+                <a class="navbar-brand" href="#">ETA Central</a>
                 <button class="navbar-toggler" aria expanded="false" aria-controls="navbarsExample05" aria-label="Toggle navigation" type="button" data-target="#navbarsExample05" data-toggle="collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -37,27 +33,102 @@
                 </div>
 
             </nav>
-            <div class="jumbotron">
-                
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <img src="src/images/production-icon-t.png" alt="Card image cap" width="150px" height="150px">
+                                <h4>Production</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <img src="src/images/inventory-icon-t.png" alt="Card image cap" width="150px" height="150px">
+                                <h4>Inventory</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <img src="src/images/purchasing-icon-t.png" alt="Card image cap" width="150px" height="150px">
+                                <h4>Purchasing</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <img src="src/images/sales-orders-icon-t.png" alt="Card image cap" width="150px" height="150px">
+                                <h4>Sales Orders</h4>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="https://getbootstrap.com/docs/4.1/examples/dashboard/#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                            Orders
+                            </a>
+                        </li> -->
+                        </ul>
+                    </div>
+                </nav>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-4 border-dev ml-4">
-                        <h1 class="display-4">Purchasing</h1>
+            
+        </div>
+            
+
+            <!-- <div id="card-container">
+
+                <div class="d-flex justify-content-center">
+                    <div class="" id="box-main-purchasing">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="src/images/purchasing-card-2.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Purchasing</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4 border-dev">
-                        <h1 class="display-4">Inventory</h1>
+                    <div class="" id="box-main-inventory">
+                        <div class="" id="box-main-inventory">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="src/images/inventory-box-3.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Inventory</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4 border-dev">
-                        <h1 class="display-4">Production</h1>
+                    <div class="" id="box-main-production">
+                        <div class="" id="box-main-production">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="src/images/production-card.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Production</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4 border-dev">
-                        <h1 class="display-4">Sales Orders</h1>
+                    <div class="" id="box-main-sales-orders">
+                        <div class="" id="box-main-purchasing">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="src/images/sales-card-2.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sales Orders</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- <h1 class="display-4">Fluid jumbotron</h1>
-                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
             </div>
+             -->
         </div>
     </div>
 </body>

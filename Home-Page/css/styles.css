@@ -13,3 +13,17 @@
 .border-dev {
     border: solid 1px red;
 }
+
+.feather-24-24 {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+body { 
+    padding-top: 65px; 
+}
