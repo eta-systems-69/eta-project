@@ -136,5 +136,10 @@
       }
     }
   },
-  "defaultProject": "eta-project"
+  "defaultProject": "eta-project",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
