@@ -1,9 +1,49 @@
-.h-40 {
-    height: 40%;
+
+/* ----page styles-------------------------------------------------------------------------- */
+html,body { height:100%; }
+/* 
+body { 
+    padding-top: 55px; 
+} */
+
+/* ----sidebar css-------------------------------------------------------------------------- */
+
+.sidebar-item, .sidebar-logo {
+    padding: 10px;
 }
 
-.h-60 {
-    height: 60%;
+ul.nav > .sidebar-item > a > p { 
+    font-size: 13px !important; 
+}
+
+ul.nav > .sidebar-item > a:hover { 
+    color: #003791 !important; 
+}
+
+ul.nav > .sidebar-item > a:hover { 
+    color: #003791 !important; 
+}
+
+ul.nav > .sidebar-item:hover { 
+    background-color: rgba(115, 145, 165, 0.678) !important; 
+}
+
+ul.nav > .sidebar-item-selected { 
+    background-color: rgba(115, 145, 165, 0.678) !important; 
+}
+
+
+/* ----colors-------------------------------------------------------------------------- */
+.color-dark-blue {
+    color: #003791;
+}
+
+.background-light-blue {
+    background:#8ab4d8;
+}
+
+.background-dark-blue {
+    background:#3172af;
 }
 
 .h-100 {
@@ -14,16 +54,3 @@
     border: solid 1px red;
 }
 
-.feather-24-24 {
-    width: 24px;
-    height: 24px;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-}
-
-body { 
-    padding-top: 65px; 
-}

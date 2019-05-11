@@ -14,121 +14,72 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/feather.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
 
     <script type="text/javascript" src="js/main.js"></script>
 
 
 </head>
 <body>
-    <div class="page-container">
-        <div class="content-container">
-            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-                <a class="navbar-brand" href="#">ETA Central</a>
-                <button class="navbar-toggler" aria expanded="false" aria-controls="navbarsExample05" aria-label="Toggle navigation" type="button" data-target="#navbarsExample05" data-toggle="collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <div class="page-container h-100">
 
-                <div class="collapse navbar-collapse" id="navbarsExample05">
-                    
-                </div>
-
-            </nav>
-
-        <div class="container-fluid">
-            <div class="row">
-                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                    <div class="sidebar-sticky">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <nav class="d-none d-sm-block sidebar background-light-blue" style="width: 95px;">
+                    <div class="h-100" style="position: relative;">
                         <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <img src="src/images/production-icon-t.png" alt="Card image cap" width="150px" height="150px">
-                                <h4>Production</h4>
+                        <li class="w-100 sidebar-logo background-dark-blue" >
+                            <img src="src/images/eta-symbol.png" alt="Card image cap" width="100%">
+                        </li>
+                        <li class="w-100 sidebar-item" >
+                            <a class="active color-dark-blue" href="#">
+                                <img src="src/images/production-icon-t.png" alt="Card image cap" width="100%">
+                                <p align="center">Production</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <img src="src/images/inventory-icon-t.png" alt="Card image cap" width="150px" height="150px">
-                                <h4>Inventory</h4>
+                        <li class="w-100 sidebar-item">
+                            <a class="active color-dark-blue" href="#">
+                                <img src="src/images/inventory-icon-t.png" alt="Card image cap" width="100%">
+                                <p align="center">Inventory</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <img src="src/images/purchasing-icon-t.png" alt="Card image cap" width="150px" height="150px">
-                                <h4>Purchasing</h4>
+                        <li class="w-100 sidebar-item">
+                            <a class="active color-dark-blue" href="#">
+                                <img src="src/images/purchasing-icon-t.png" alt="Card image cap" width="100%">
+                                <p align="center">Purchasing</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <img src="src/images/sales-orders-icon-t.png" alt="Card image cap" width="150px" height="150px">
-                                <h4>Sales Orders</h4>
+                        <li class="w-100 sidebar-item">
+                            <a class="active color-dark-blue" href="#">
+                                <img src="src/images/sales-orders-icon-t.png" alt="Card image cap" width="100%">
+                                <p align="center">Sales Orders</p>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="https://getbootstrap.com/docs/4.1/examples/dashboard/#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                            Orders
-                            </a>
-                        </li> -->
+                        <li class="w-100 background-dark-blue" style="position: absolute; bottom: 0;">
+                            <div class="d-flex">
+                                <div class="w-50 p-1">
+                                    <a class="active color-dark-blue" href="#">
+                                        <img src="src/images/settings-icon.png" alt="Card image cap" width="100%">
+                                    </a>
+                                </div>
+                                <div class="w-50 p-1">
+                                    <a class="active color-dark-blue" href="#">
+                                        <img src="src/images/support-icon.png" alt="Card image cap" width="100%">
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </li>
                         </ul>
                     </div>
                 </nav>
-            </div>
-            
-        </div>
-            
 
-            <!-- <div id="card-container">
-
-                <div class="d-flex justify-content-center">
-                    <div class="" id="box-main-purchasing">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="src/images/purchasing-card-2.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Purchasing</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="" id="box-main-inventory">
-                        <div class="" id="box-main-inventory">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="src/images/inventory-box-3.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Inventory</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="" id="box-main-production">
-                        <div class="" id="box-main-production">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="src/images/production-card.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Production</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="" id="box-main-sales-orders">
-                        <div class="" id="box-main-purchasing">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="src/images/sales-card-2.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Sales Orders</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class = "h-100 border-dev" id="area-dashboard" style="width: calc(100% - 95px);">
+                    
                 </div>
+
+
             </div>
-             -->
         </div>
     </div>
 </body>

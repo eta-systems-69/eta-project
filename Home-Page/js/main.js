@@ -1,5 +1,11 @@
-$(document).ready(function(){
-    feather.replace();
-    console.log("ready");
+ //sidebar controls
+ $(document).ready(function(){
+
+    $('.sidebar-item').click(
+        function() {
+            $(this).toggleClass('sidebar-item-selected');
+        }
+    );
     
  });
+
