@@ -16,9 +16,69 @@ body {
     padding-right: 5px !important;
 } */
 
+.font-20 {
+    font-size: 20px;
+}
+
+.font-bookman {
+    font-family: Bookman Old Style; 
+    font-weight: 700;
+}
+
+
+.h-43 {
+    height: 43%;
+}
+
 .h-40 {
     height: 40%;
 }
+
+.h-11 {
+    height: 11%;
+}
+
+.h-10 {
+    height: 5%;
+}
+
+.h-14 {
+    height: 14%;
+}
+
+.w-33 {
+    width: 33%;
+}
+
+/* ----colors-------------------------------------------------------------------------- */
+.color-dark-blue {
+    color: #003791;
+}
+
+.color-white {
+    color: #fcfcfc;
+}
+
+.background-light-blue {
+    background:#8ab4d8;
+}
+
+.background-blue {
+    background:#4f98d8;
+}
+
+.background-light-gray {
+    background:#dee9f2;
+}
+
+.background-dark-blue {
+    background:#3172af;
+}
+
+.border-dev {
+    border: solid 1px red;
+}
+
 
 /* ----sidebar css-------------------------------------------------------------------------- */
 
@@ -46,27 +106,39 @@ ul.nav > .sidebar-item-selected {
     background-color: rgba(115, 145, 165, 0.678) !important; 
 }
 
-
-/* ----colors-------------------------------------------------------------------------- */
-.color-dark-blue {
-    color: #003791;
+/* ----form-control-------------------------------------------------------------------------- */
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.background-light-blue {
-    background:#8ab4d8;
+.btn.sharp {
+    border-radius:0;
 }
 
-.background-light-gray {
-    background:#dee9f2;
+.btn.raised {
+	box-shadow: 0 3px 0 0 #007299;
 }
 
-.background-dark-blue {
-    background:#3172af;
+.btn.raised:active, .btn.raised.active  {
+	background: #3382cc;
+	box-shadow: 0 3px 0 0 #3382cc;
+	margin-bottom: -3px;
+	margin-top: 3px;
 }
 
-.border-dev {
-    border: solid 1px red;
-}
+/* ----table formatting-------------------------------------------------------------------------- */
 
+.tableFixHead    { overflow-y: auto; height: 100px; }
+.tableFixHead th { position: sticky; top: 0; }
+
+/* Just common table stuff. Really. */
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+th     { background:#eee; }
+  
 
 

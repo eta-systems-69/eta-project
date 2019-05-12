@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- <link rel="icon" href="src/icon.png" type="image/x-icon" /> -->
-    <title>Sales Orders</title>
+    <title>ETA Central</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,8 +24,9 @@
 
 </head>
 <body>
-    <div class="page-container h-100 background-light-gray">
-
+    <div class="page-container h-100">
+        <div class="w-100 background-dark-blue" style="height: 35px; position: absolute; bottom: 0; z-index: 0;"></div>
+        <!-- Side bar -->
         <div class="container-fluid no-gutters h-100">
             <div class="row h-100">
                 <nav class="d-none d-sm-block sidebar background-light-blue" style="width: 95px; border-right: solid 2px #3172af;">
@@ -60,12 +61,12 @@
                         </li>
                         <li class="w-100 background-dark-blue" style="position: absolute; bottom: 0;">
                             <div class="d-flex">
-                                <div class="w-50 p-1">
+                                <div class="w-33 p-1">
                                     <a class="active color-dark-blue" href="#">
                                         <img src="src/images/settings-icon.png" alt="Card image cap" width="100%">
                                     </a>
                                 </div>
-                                <div class="w-50 p-1">
+                                <div class="w-33 p-1">
                                     <a class="active color-dark-blue" href="#">
                                         <img src="src/images/support-icon.png" alt="Card image cap" width="100%">
                                     </a>
@@ -76,30 +77,87 @@
                         </ul>
                     </div>
                 </nav>
-
-                <div class = "container-fluid h-100 no-gutters" id="area-dashboard" style="width: calc(100% - 95px);">
-                    <div class="row h-40">
-                        <div class="col-3">
+                <!-- Dashboard Area -->
+                <div class = "container-fluid no-gutters " id="area-dashboard" style="width: calc(50% - 95px); height: calc(100% - 35px);">
+                    <!-- col 1 row 1 -->
+                    <div class="row h-11">
+                        <!-- launch button -->
+                        <div class="col-3 h-100 ml-3 pt-3 pb-3 no-padding">
+                            <button type="button" class="btn raised h-100 background-blue color-white w-100 font-20">Launch</button>
+                        </div>
+                        <div class="col-8 h-100 ml-3 pt-4 pb-3 no-padding">
+                            <h1 align="center" class="font-bookman h-100 w-100">Sales Order Central</h1>
+                        </div>
+                    </div>
+                    <!-- col 1 row 2 -->
+                    <div class="row h-43">
+                        <div class="col-6">
                             <canvas id="sales-orders-chart-pie"></canvas>
                         </div>
-                        <div class="col-3 no-padding">
+                        <div class="col-6 no-padding">
                                 <canvas id="sales-orders-chart-bar2"></canvas>
                         </div>
-                        <div class="col-6 no-padding border-dev" id="sales-orders-table-quotes">
-                            
-                        </div>
                     </div>
-                    <div class="row h-40">
-                        <div class="col-6">
+                    <!-- col 1 row 3 -->
+                    <div class="row h-43">
+                        <div class="col-12">
                             <canvas id="sales-orders-chart-bar"></canvas>
                         </div>
-                        <div class="col-6 no-padding border-dev" id="sales-orders-table-quotes">
-                            
+                    </div>
+                    
+                </div>
+                <!-- Table Area -->
+                <div class = "container-fluid no-gutters" id="area-dashboard" style="width: 50%; height: calc(100% - 35px);">
+                    <!-- col 2 row 1 -->
+                    <div class="row h-10">
+                        <h4>Open Quotes</h4>
+                    </div>
+                    <div class="row h-50">
+                        <div class="tableFixHead no-padding w-100 h-100" id="sales-orders-table-quotes">
+                            <table class="table table-striped h-100">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th><th scope="col">First</th><th scope="col">Last</th><th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="height: 10px !important; overflow: scroll;">
+                                    <tr>
+                                        <th scope="row">1</th><td>Mark</td><td>Otto</td><td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th><td>Jacob</td><td>Thornton</td><td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">3</th>
+                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
+                                    </tr>
+                                    <th scope="row">3</th>
+                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
+                                    </tr>
+                                    <th scope="row">3</th>
+                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
+                                    </tr>
+                                    <th scope="row">3</th>
+                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
+                                    </tr>
+                                    <th scope="row">3</th>
+                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
+                                    </tr>
+                                    <th scope="row">3</th>
+                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
+                                    </tr>
+                                    <th scope="row">3</th>
+                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+                    <!-- col 2 row 2 -->
+                    <div class="row h-50">
+                            <div class="no-padding w-100 border-dev" id="sales-orders-table-quotes"></div>
+                    </div>
                 </div>
-
-
             </div>
         </div>
     </div>
