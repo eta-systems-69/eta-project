@@ -14,7 +14,7 @@ app.on('activate', () => {
 
 function createWindow() {
     // win = new BrowserWindow({ fullscreen: true })
-    win = new BrowserWindow({ width: 800, height: 600 })
+    win = new BrowserWindow({ width: 1280, height: 720 })
 
     win.loadURL(
         url.format({
@@ -24,7 +24,7 @@ function createWindow() {
         })
     )
 
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools()
 
     win.on('closed', () => {
         win = null
