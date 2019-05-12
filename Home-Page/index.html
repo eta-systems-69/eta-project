@@ -14,18 +14,21 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/feather.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
+    <script src="js/jquery.fittext.js"></script> 
+    <!-- <script src="js/plotly.min.js"></script> -->
+    <script src="js/Chart.bundle.min.js"></script>
+    
 
     <script type="text/javascript" src="js/main.js"></script>
 
 
 </head>
 <body>
-    <div class="page-container h-100">
+    <div class="page-container h-100 background-light-gray">
 
-        <div class="container-fluid h-100">
+        <div class="container-fluid no-gutters h-100">
             <div class="row h-100">
-                <nav class="d-none d-sm-block sidebar background-light-blue" style="width: 95px;">
+                <nav class="d-none d-sm-block sidebar background-light-blue" style="width: 95px; border-right: solid 2px #3172af;">
                     <div class="h-100" style="position: relative;">
                         <ul class="nav flex-column">
                         <li class="w-100 sidebar-logo background-dark-blue" >
@@ -74,8 +77,26 @@
                     </div>
                 </nav>
 
-                <div class = "h-100 border-dev" id="area-dashboard" style="width: calc(100% - 95px);">
-                    
+                <div class = "container-fluid h-100 no-gutters" id="area-dashboard" style="width: calc(100% - 95px);">
+                    <div class="row h-40">
+                        <div class="col-3">
+                            <canvas id="sales-orders-chart-pie"></canvas>
+                        </div>
+                        <div class="col-3 no-padding">
+                                <canvas id="sales-orders-chart-bar2"></canvas>
+                        </div>
+                        <div class="col-6 no-padding border-dev" id="sales-orders-table-quotes">
+                            
+                        </div>
+                    </div>
+                    <div class="row h-40">
+                        <div class="col-6">
+                            <canvas id="sales-orders-chart-bar"></canvas>
+                        </div>
+                        <div class="col-6 no-padding border-dev" id="sales-orders-table-quotes">
+                            
+                        </div>
+                    </div>
                 </div>
 
 
