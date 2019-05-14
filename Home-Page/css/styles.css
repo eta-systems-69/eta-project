@@ -25,7 +25,20 @@ body {
     font-weight: 700;
 }
 
+.h-85 {
+    height: 85%;
+}
 
+.h-45 {
+    height: 45%;
+}
+
+.h-45 {
+    height: 45%;
+}
+.h-44 {
+    height: 44%;
+}
 .h-43 {
     height: 43%;
 }
@@ -33,9 +46,12 @@ body {
 .h-40 {
     height: 40%;
 }
+.h-15 {
+    height: 15%;
+}
 
-.h-45 {
-    height: 45%;
+.h-14 {
+    height: 14%;
 }
 
 .h-11 {
@@ -50,8 +66,8 @@ body {
     height: 10%;
 }
 
-.h-14 {
-    height: 14%;
+.w-45 {
+    width: 45%;
 }
 
 .w-33 {
@@ -67,20 +83,36 @@ body {
     color: #fcfcfc;
 }
 
+.color-gray {
+    color: #48505A;
+}
+
 .background-light-blue {
     background:#8ab4d8;
 }
 
 .background-blue {
-    background:#4f98d8;
+    background:#396992;
 }
 
 .background-light-gray {
-    background:#dee9f2;
+    background:#e7ecee;
+}
+
+.background-dashboard-headers {
+    background:#c7d4e2;
+}
+
+.background-white {
+    background:#ffffff;
 }
 
 .background-dark-blue {
-    background:#3172af;
+    background:#14395c;
+}
+
+.background-dark-light-blue {
+    background-image: linear-gradient(#396992 , #14395c);
 }
 
 .border-dev {
@@ -128,14 +160,15 @@ ul.nav > .sidebar-item-selected {
 }
 
 .btn.raised {
-	box-shadow: 0 3px 0 0 #007299;
+	box-shadow: 0 3px 0 0 #032835;
 }
 
 .btn.raised:active, .btn.raised.active  {
+    color: white !important;
 	background: #3382cc;
 	box-shadow: 0 3px 0 0 #3382cc;
-	margin-bottom: -3px;
-	margin-top: 3px;
+	margin-bottom: -2px;
+	margin-top: 2px;
 }
 
 /* ----table formatting-------------------------------------------------------------------------- */
@@ -146,7 +179,7 @@ ul.nav > .sidebar-item-selected {
 /* Just common table stuff. Really. */
 table  { border-collapse: collapse; width: 100%; }
 th, td { padding: 8px 16px; }
-th     { background:#eee; }
+th     { background:#ffffff; }
   
 
 

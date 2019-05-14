@@ -17,6 +17,8 @@
     <script src="js/jquery.fittext.js"></script> 
     <!-- <script src="js/plotly.min.js"></script> -->
     <script src="js/Chart.bundle.min.js"></script>
+    <script src="js/chartjs-plugin-labels.js"></script>
+    <script src="js/chartjs-plugin-doughnut-text.js"></script>
     
 
     <script type="text/javascript" src="js/main.js"></script>
@@ -25,49 +27,49 @@
 </head>
 <body>
     <div class="page-container h-100">
-        <div class="w-100 background-dark-blue" style="height: 35px; position: absolute; bottom: 0; z-index: 0;"></div>
+        <div class="w-100 background-dark-blue" style="height: 25px; position: absolute; bottom: 0; z-index: 0;"></div>
         <!-- Side bar -->
         <div class="container-fluid no-gutters h-100">
             <div class="row h-100">
-                <nav class="d-none d-sm-block sidebar background-light-blue" style="width: 95px; border-right: solid 2px #3172af;">
+                <nav class="d-none d-sm-block sidebar background-dark-light-blue" style="width: 95px;">
                     <div class="h-100" style="position: relative;">
                         <ul class="nav flex-column">
-                        <li class="w-100 sidebar-logo background-dark-blue" >
+                        <li class="w-100 sidebar-logo" >
                             <img src="src/images/eta-symbol.png" alt="Card image cap" width="100%">
                         </li>
                         <li class="w-100 sidebar-item" >
-                            <a class="active color-dark-blue" href="#">
+                            <a class="active color-white" href="#">
                                 <img src="src/images/production-icon-t.png" alt="Card image cap" width="100%">
                                 <p align="center">Production</p>
                             </a>
                         </li>
                         <li class="w-100 sidebar-item">
-                            <a class="active color-dark-blue" href="#">
+                            <a class="active color-white" href="#">
                                 <img src="src/images/inventory-icon-t.png" alt="Card image cap" width="100%">
                                 <p align="center">Inventory</p>
                             </a>
                         </li>
                         <li class="w-100 sidebar-item">
-                            <a class="active color-dark-blue" href="#">
+                            <a class="active color-white" href="#">
                                 <img src="src/images/purchasing-icon-t.png" alt="Card image cap" width="100%">
                                 <p align="center">Purchasing</p>
                             </a>
                         </li>
                         <li class="w-100 sidebar-item">
-                            <a class="active color-dark-blue" href="#">
+                            <a class="active color-white" href="#">
                                 <img src="src/images/sales-orders-icon-t.png" alt="Card image cap" width="100%">
                                 <p align="center">Sales Orders</p>
                             </a>
                         </li>
-                        <li class="w-100 background-dark-blue" style="position: absolute; bottom: 0;">
+                        <li class="w-100" style="position: absolute; bottom: 0;">
                             <div class="d-flex">
                                 <div class="w-33 p-1">
-                                    <a class="active color-dark-blue" href="#">
+                                    <a class="active color-white" href="#">
                                         <img src="src/images/settings-icon.png" alt="Card image cap" width="100%">
                                     </a>
                                 </div>
                                 <div class="w-33 p-1">
-                                    <a class="active color-dark-blue" href="#">
+                                    <a class="active color-white" href="#">
                                         <img src="src/images/support-icon.png" alt="Card image cap" width="100%">
                                     </a>
                                 </div>
@@ -78,77 +80,83 @@
                     </div>
                 </nav>
                 <!-- Dashboard Area -->
-                <div class = "container-fluid no-gutters " id="area-dashboard" style="width: calc(50% - 95px); height: calc(100% - 35px);">
+                <div class = "background-light-gray px-4 py-3" id="area-dashboard" style="width: calc(50% - 95px); height: calc(100% - 25px);">
                     <!-- col 1 row 1 -->
-                    <div class="row h-11">
+                    <div class="d-flex h-11 pb-4">
                         <!-- launch button -->
-                        <div class="col-3 h-100 ml-3 pt-3 pb-3 no-padding">
+                        <div class="h-100 pb-2">
                             <button type="button" class="btn raised h-100 background-blue color-white w-100 font-20">Launch</button>
                         </div>
-                        <div class="col-8 h-100 ml-3 pt-4 pb-3 no-padding">
-                            <h1 align="center" class="font-bookman h-100 w-100">Sales Order Central</h1>
+                        <div class="h-100 w-100 pt-2 pl-4">
+                            <h1 align="left" class="font-bookman h-100 w-100" style="margin: 0px !important;">Sales Order Central</h1>
                         </div>
                     </div>
                     <!-- col 1 row 2 -->
-                    <div class="row h-43">
-                        <div class="col-6">
-                            <canvas id="sales-orders-chart-pie"></canvas>
+                    <div class="d-flex h-44 pb-3">
+                        <!-- doughnut container -->
+                        <div class="h-100 w-50 mr-2 background-white">
+                            <div class="d-flex flex-column">
+                                <div class="h-15 w-auto pt-2 pl-4 background-dashboard-headers">
+                                    <h4 class="color-gray">Current Demand</h4>
+                                </div>
+                                <div class="h-85 w-auto">
+                                    <canvas id="sales-orders-chart-pie"></canvas>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-6 no-padding">
-                                <canvas id="sales-orders-chart-bar2"></canvas>
+                        <!-- square-bar chart container -->
+                        <div class="h-100 w-50 ml-2 background-white">
+                            <div class="d-flex flex-column">
+                                <div class="h-15 w-100 pt-2 pl-4 background-dashboard-headers">
+                                    <h4 class="color-gray">Quotes/Sales Orders (Week)</h4>
+                                </div>
+                                <div class="h-85 w-100">
+                                    <canvas class="background-white" id="sales-orders-chart-bar2"></canvas> 
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- col 1 row 3 -->
-                    <div class="row h-43">
-                        <div class="col-12">
-                            <canvas id="sales-orders-chart-bar"></canvas>
+                    <div class="d-flex h-45">
+                        <div class="h-100 w-100 background-white">
+                            <div class="d-flex flex-column">
+                                <div class="h-15 w-100 pt-2 pl-4 background-dashboard-headers">
+                                    <h4 class="color-gray">Current Demand - Next 3 Months</h4>
+                                </div>
+                                <div class="h-85 w-100">
+                                        <canvas class="background-white" id="sales-orders-chart-bar"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                 </div>
                 <!-- Table Area -->
-                <div class = "container-fluid no-gutters" id="area-dashboard" style="width: 50%; height: calc(100% - 35px);">
+                <div class = "container-fluid no-gutters background-light-gray" id="area-dashboard" style="width: 50%; height: calc(100% - 35px);">
                     <!-- col 2 row 1 -->
                     <div class="row h-5">
                         <h4>Open Quotes</h4>
                     </div>
                     <div class="row h-45">
                         <div class="tableFixHead no-padding w-100 h-100" id="sales-orders-table-quotes">
-                            <table class="table table-striped h-100">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th><th scope="col">First</th><th scope="col">Last</th><th scope="col">Handle</th>
-                                    </tr>
+                            <table class="table table-hover table-sm background-white h-100">
+                                <thead class="background-white">
+                                    <tr><th scope="col">#</th><th scope="col">Quote ID</th><th scope="col">Part Num</th><th scope="col">Qty</th><th scope="col">PPU</th><th scope="col">Customer</th><th scope="col">Prime</th><th scope="col">Quote Date</th><th scope="col">Due Date</th></tr>
                                 </thead>
                                 <tbody style="height: 10px !important; overflow: scroll;">
-                                    <tr>
-                                        <th scope="row">1</th><td>Mark</td><td>Otto</td><td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th><td>Jacob</td><td>Thornton</td><td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                    <th scope="row">3</th>
-                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
-                                    </tr>
-                                    <th scope="row">3</th>
-                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
-                                    </tr>
-                                    <th scope="row">3</th>
-                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
-                                    </tr>
-                                    <th scope="row">3</th>
-                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
-                                    </tr>
-                                    <th scope="row">3</th>
-                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
-                                    </tr>
-                                    <th scope="row">3</th>
-                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
-                                    </tr>
-                                    <th scope="row">3</th>
-                                        <td>Larry</td><td>the Bird</td><td>@twitter</td>
-                                    </tr>
+                                    <tr><td>1</td><td>F00001547</td><td>A-201-B</td><td>150</td><td>$110.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>2</td><td>F00001547</td><td>G-110</td><td>1000</td><td>$102.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>3</td><td>F00001547</td><td>A-100-C</td><td>300</td><td>$94.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>4</td><td>F00001548</td><td>A-001</td><td>50</td><td>$102.00</td><td>CaseyDumb</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>5</td><td>F00001549</td><td>A-201-B</td><td>125</td><td>$65.00</td><td>Comp C Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>6</td><td>F00001550</td><td>G-100</td><td>100</td><td>$108.00</td><td>Comp D Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>7</td><td>F00001551</td><td>A200-C</td><td>150</td><td>$102.99</td><td>Jacob Gay Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>8</td><td>F00001551</td><td>C-100</td><td>103</td><td>$169.00</td><td>Comp E Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>9</td><td>F00001552</td><td>B-210-A</td><td>550</td><td>$86.00</td><td>Comp F Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>10</td><td>F00001553</td><td>A201-B</td><td>100</td><td>$112.00</td><td>Comp G Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>11</td><td>F00001554</td><td>A201-B</td><td>121</td><td>$98.00</td><td>Comp H Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>12</td><td>F00001555</td><td>A200-A</td><td>75</td><td>$147.50</td><td>Comp I Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    <tr><td>13</td><td>F00001556</td><td>G100</td><td>34</td><td>$153.00</td><td>Comp J Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
                                 </tbody>
                             </table>
                         </div>
