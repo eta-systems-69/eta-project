@@ -1,20 +1,28 @@
 
 /* ----page styles-------------------------------------------------------------------------- */
+
 html,body { height:100%; }
-/* 
-body { 
-    padding-top: 55px; 
-} */
 
 .no-padding {
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
 
-/* .chart-padding {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-} */
+h1 {
+    margin:0;
+}
+
+/* ----fonts-------------------------------------------------------------------------- */
+@font-face {
+    font-family: 'Roboto';
+    src: url('src/fonts/Roboto-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+
+    font-family: 'Roboto Medium';
+    src: url('src/fonts/Roboto-Medium.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    
+    font-family: 'Roboto Bold';
+    src: url('src/fonts/Roboto-Bold.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
 
 .font-20 {
     font-size: 20px;
@@ -25,8 +33,27 @@ body {
     font-weight: 700;
 }
 
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-roboto-medium {
+    font-family: 'Roboto Medium', sans-serif;
+}
+
+.font-roboto-bold {
+    font-family: 'Roboto Bold', sans-serif;
+    font-weight: bold; 
+}
+
+
+/* ----heights-------------------------------------------------------------------------- */
 .h-85 {
     height: 85%;
+}
+
+.h-60 {
+    height: 60%;
 }
 
 .h-45 {
@@ -115,6 +142,7 @@ body {
     background-image: linear-gradient(#396992 , #14395c);
 }
 
+
 .border-dev {
     border: solid 1px red;
 }
@@ -145,6 +173,18 @@ ul.nav > .sidebar-item:hover {
 ul.nav > .sidebar-item-selected { 
     background-color: rgba(115, 145, 165, 0.678) !important; 
 }
+
+/* ----header css-------------------------------------------------------------------------- */
+
+.display-table {
+    display: table;
+}
+
+.display-table-cell-middle {
+    display:table-cell; 
+    vertical-align:middle;
+}
+
 
 /* ----form-control-------------------------------------------------------------------------- */
 .btn {

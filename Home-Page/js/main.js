@@ -1,6 +1,12 @@
  //sidebar controls
  $(document).ready(function(){
 
+    //make chart headers fit title areas
+    $("#chart-header-1").fitText(1,{ maxFontSize: '20px' });
+    $("#chart-header-2").fitText(1,{ maxFontSize: '20px' });
+    $("#chart-header-3").fitText(1.4,{ maxFontSize: '20px' });
+    $("#page-header-1").fitText(1.3, { minFontSize: '20px', maxFontSize: '40px' });
+
     $('.sidebar-item').click(
         function() {
             if( $(this).hasClass('sidebar-item-selected') ) {
@@ -16,7 +22,47 @@
  });
 
 
- //-----plotly charts------------------------------------//
+
+ //-----remove legend when too small------------------------------------//
+
+ var resizeId;
+$(window).resize(function() {
+    clearTimeout(resizeId);
+    resizeId = setTimeout(afterResizing(), 100);
+});
+
+function afterResizing(){
+
+    //sm-bar-chart
+    var canvaswidth1 = document.getElementById("chart-bar-sm-container").offsetWidth;
+    var canvasheight1 = document.getElementById("chart-bar-sm-container").offsetHeight;
+    myBarChart2.options.aspectRatio = canvaswidth1/canvasheight1;
+
+    // if(canvaswidth1 <=300) { myBarChart2.options.legend.display=false; }
+    //     else { myBarChart2.options.legend.display=true; }
+
+    //doughnut-chart
+    var canvaswidth2 = document.getElementById("chart-doughnut-container").offsetWidth;
+    var canvasheight2 = document.getElementById("chart-doughnut-container").offsetHeight;
+    myDoughnutChart.options.aspectRatio = canvaswidth2/canvasheight2;
+    console.log(myDoughnutChart.options.plugins.labels.fontColor);
+
+    if(canvaswidth2 <=230) { myDoughnutChart.options.plugins.labels.fontColor='transparent'; }
+        else { myDoughnutChart.options.plugins.labels.fontColor='#48505A'; }
+
+    //long-bar-chart
+    var canvaswidth3 = document.getElementById("chart-bar-container").offsetWidth;
+    var canvasheight3 = document.getElementById("chart-bar-container").offsetHeight;
+    myBarChart.options.aspectRatio = canvaswidth3/canvasheight3;
+
+    if(canvaswidth3 <=600) { myBarChart.options.legend.display=false; }
+        else { myBarChart.options.legend.display=true; }
+
+    myBarChart.update();
+}
+
+
+ //-----chartjs charts------------------------------------//
 
  //sales-orders
  $(document).ready(function(){
@@ -56,32 +102,21 @@
                 render: 'label',
                 fontColor: '#000',
                 position: 'outside',
-                textMargin: 8
+                textMargin: 6
             }
         },
         legend: {
-            display: false,
-            position: 'right',
-            labels: {
-                fontColor: chartsFontColor
-            }
-        },
-        title: {
-            position: 'top',
-            display: false,
-            fontSize: 20,
-            fontColor: chartsFontColor,
-            text: "Current PN Demand"
+            display: false
         },
         layout: {
             padding: {
-                left: 0,
-                right: 0,
+                left: 20,
+                right: 20,
                 bottom: 0,
-                top: 20,
+                top: 0,
             }
         },
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         aspectRatio: 1.4,
         responsive: true,
         cutoutPercentage: 75,
@@ -89,12 +124,11 @@
 
     
 
-    var myDoughnutChart = new Chart(ctx1, {
+    myDoughnutChart = new Chart(ctx1, {
         type: 'doughnut',
         data: dataPie,
         options: optionsPie
     });
-    console.log(myDoughnutChart.data.datasets[0].labels);
 
     //-----------bar-chart1 (quantity by PN)----------------------------------//
     var ctx = document.getElementById('sales-orders-chart-bar').getContext('2d');
@@ -191,15 +225,15 @@
         },
         layout: {
             padding: {
-                left: 10,
-                right: 30,
+                left: 0,
+                right: 20,
                 bottom: 0,
                 top: 30,
             }
         },
-        aspectRatio: 2.7,
+        aspectRatio: 2.5,
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         tooltips: {
             mode: 'index',
             intersect: false
@@ -232,7 +266,7 @@
         }
     };
 
-    var myBarChart = new Chart(ctx, {
+    myBarChart = new Chart(ctx, {
         type: 'bar',
         data: barChartData,
         options: options
@@ -289,7 +323,7 @@
                 top: 40,
             }
         },
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         aspectRatio: 1.4,
         responsive: true,
         tooltips: {
@@ -323,7 +357,7 @@
         }
     };
 
-    var myBarChart2 = new Chart(ctx2, {
+    myBarChart2 = new Chart(ctx2, {
         type: 'bar',
         data: barChartData2,
         options: options

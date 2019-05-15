@@ -80,59 +80,61 @@
                     </div>
                 </nav>
                 <!-- Dashboard Area -->
-                <div class = "background-light-gray px-4 py-3" id="area-dashboard" style="width: calc(50% - 95px); height: calc(100% - 25px);">
+                <div class = "background-light-gray px-4 pb-3" id="area-dashboard" style="width: calc(50% - 95px); height: calc(100% - 25px);">
                     <!-- col 1 row 1 -->
-                    <div class="d-flex h-11 pb-4">
+                    <div class="d-flex" style="height: 80px; align-items: center; ">
                         <!-- launch button -->
-                        <div class="h-100 pb-2">
-                            <button type="button" class="btn raised h-100 background-blue color-white w-100 font-20">Launch</button>
+                        <div class="">
+                            <button type="button" class="btn raised w-100 background-blue color-white" style="display:table-cell; vertical-align: middle;">Launch</button>
                         </div>
-                        <div class="h-100 w-100 pt-2 pl-4">
-                            <h1 align="left" class="font-bookman h-100 w-100" style="margin: 0px !important;">Sales Order Central</h1>
+                        <div class="w-100 pl-4 pt-3">
+                            <h1 align="left" class="font-roboto-bold h-100 w-100 " id="page-header-1">Sales Order Central</h1>
                         </div>
                     </div>
-                    <!-- col 1 row 2 -->
-                    <div class="d-flex h-44 pb-3">
-                        <!-- doughnut container -->
-                        <div class="h-100 w-50 mr-2 background-white">
-                            <div class="d-flex flex-column">
-                                <div class="h-15 w-auto pt-2 pl-4 background-dashboard-headers">
-                                    <h4 class="color-gray">Current Demand</h4>
+                    <div style="height: calc(100% - 80px);">
+                        <!-- col 1 row 2 -->
+                        <div class="d-flex h-50 pb-3 pt-3">
+                            <!-- doughnut container -->
+                            <div class="h-100 mr-2 background-white" style="width: calc(50% - 8px);">
+                                <div class="d-flex flex-column h-100">
+                                    <div class="h-15 w-100 pl-4 background-dashboard-headers display-table">
+                                        <h4 class="color-gray display-table-cell-middle" id="chart-header-1">Current Demand</h4>
+                                    </div>
+                                    <div class="h-85 w-100" id="chart-doughnut-container">
+                                        <canvas id="sales-orders-chart-pie"></canvas>
+                                    </div>
                                 </div>
-                                <div class="h-85 w-auto">
-                                    <canvas id="sales-orders-chart-pie"></canvas>
+                            </div>
+                            <!-- square-bar chart container -->
+                            <div class="h-100 ml-2 background-white" style="width: calc(50% - 8px);">
+                                <div class="d-flex flex-column h-100 w-100">
+                                    <div class="h-15 w-100 pl-4 background-dashboard-headers display-table">
+                                        <h4 class="color-gray display-table-cell-middle" id="chart-header-2">Quotes/Sales Orders</h4>
+                                    </div>
+                                    <div class="h-85 w-100" id="chart-bar-sm-container">
+                                        <canvas id="sales-orders-chart-bar2"></canvas> 
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- square-bar chart container -->
-                        <div class="h-100 w-50 ml-2 background-white">
-                            <div class="d-flex flex-column">
-                                <div class="h-15 w-100 pt-2 pl-4 background-dashboard-headers">
-                                    <h4 class="color-gray">Quotes/Sales Orders (Week)</h4>
-                                </div>
-                                <div class="h-85 w-100">
-                                    <canvas class="background-white" id="sales-orders-chart-bar2"></canvas> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <!-- col 1 row 3 -->
-                    <div class="d-flex h-45">
+                    <div class="d-flex h-50">
+                        <!-- long-bar chart container -->
                         <div class="h-100 w-100 background-white">
-                            <div class="d-flex flex-column">
-                                <div class="h-15 w-100 pt-2 pl-4 background-dashboard-headers">
-                                    <h4 class="color-gray">Current Demand - Next 3 Months</h4>
+                            <div class="d-flex flex-column h-100">
+                                <div class="h-15 w-100 pl-4 background-dashboard-headers display-table">
+                                    <h4 class="color-gray display-table-cell-middle" id="chart-header-3">Current Demand - Next 3 Months</h4>
                                 </div>
-                                <div class="h-85 w-100">
-                                        <canvas class="background-white" id="sales-orders-chart-bar"></canvas>
+                                <div class="h-85 w-100" id="chart-bar-container">
+                                    <canvas class="background-white" id="sales-orders-chart-bar"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+                </div>
                 </div>
                 <!-- Table Area -->
-                <div class = "container-fluid no-gutters background-light-gray" id="area-dashboard" style="width: 50%; height: calc(100% - 35px);">
+                <div class = "container-fluid no-gutters background-light-gray" id="area-dashboard" style="width: 50%; height: calc(100% - 25px);">
                     <!-- col 2 row 1 -->
                     <div class="row h-5">
                         <h4>Open Quotes</h4>
