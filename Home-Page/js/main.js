@@ -2,10 +2,10 @@
  $(document).ready(function(){
 
     //make chart headers fit title areas
-    $("#chart-header-1").fitText(1,{ maxFontSize: '20px' });
-    $("#chart-header-2").fitText(1,{ maxFontSize: '20px' });
-    $("#chart-header-3").fitText(1.4,{ maxFontSize: '20px' });
-    $("#page-header-1").fitText(1.3, { minFontSize: '20px', maxFontSize: '40px' });
+    // $("#chart-header-1").fitText(1,{ maxFontSize: '20px' });
+    // $("#chart-header-2").fitText(1,{ maxFontSize: '20px' });
+    // $("#chart-header-3").fitText(1.4,{ maxFontSize: '20px' });
+    // $("#page-header-1").fitText(1.3, { minFontSize: '20px', maxFontSize: '40px' });
 
     $('.sidebar-item').click(
         function() {
@@ -36,8 +36,15 @@ function afterResizing(){
     //sm-bar-chart
     var canvaswidth1 = document.getElementById("chart-bar-sm-container").offsetWidth;
     var canvasheight1 = document.getElementById("chart-bar-sm-container").offsetHeight;
-    myBarChart2.options.aspectRatio = canvaswidth1/canvasheight1;
-
+    myBarChart3.options.aspectRatio = canvaswidth1/canvasheight1;
+    //console.log(canvaswidth1 + " " + myBarChart.options.scales.xAxes[0].display);
+    if (canvaswidth1 <= 226) { 
+        myBarChart3.options.scales.xAxes[0].display=false;
+        myBarChart3.options.layout.padding.bottom=20;
+    } else { 
+        myBarChart3.options.scales.xAxes[0].display=true; 
+        myBarChart3.options.layout.padding.bottom=0;
+    }
     // if(canvaswidth1 <=300) { myBarChart2.options.legend.display=false; }
     //     else { myBarChart2.options.legend.display=true; }
 
@@ -45,7 +52,6 @@ function afterResizing(){
     var canvaswidth2 = document.getElementById("chart-doughnut-container").offsetWidth;
     var canvasheight2 = document.getElementById("chart-doughnut-container").offsetHeight;
     myDoughnutChart.options.aspectRatio = canvaswidth2/canvasheight2;
-    console.log(myDoughnutChart.options.plugins.labels.fontColor);
 
     if(canvaswidth2 <=230) { myDoughnutChart.options.plugins.labels.fontColor='transparent'; }
         else { myDoughnutChart.options.plugins.labels.fontColor='#48505A'; }
@@ -55,10 +61,14 @@ function afterResizing(){
     var canvasheight3 = document.getElementById("chart-bar-container").offsetHeight;
     myBarChart.options.aspectRatio = canvaswidth3/canvasheight3;
 
-    if(canvaswidth3 <=600) { myBarChart.options.legend.display=false; }
+    if(canvaswidth3 <=600 || canvasheight3 <=210) { myBarChart.options.legend.display=false; }
         else { myBarChart.options.legend.display=true; }
+    if(canvaswidth3 <=452) { myBarChart.options.legend.display=false; }
+        else { myBarChart.options.scales.xAxes.display=false; }
 
     myBarChart.update();
+    myDoughnutChart.update();
+    myBarChart3.update();
 }
 
 
@@ -240,6 +250,7 @@ function afterResizing(){
         },
         scales: {
             xAxes: [{
+                display: true,
                 stacked: true,
                 ticks: {
                     fontColor: chartsFontColor
@@ -320,7 +331,7 @@ function afterResizing(){
                 left: 0,
                 right: 30,
                 bottom: 0,
-                top: 40,
+                top: 20,
             }
         },
         maintainAspectRatio: false,
@@ -332,6 +343,7 @@ function afterResizing(){
         },
         scales: {
             xAxes: [{
+                display: true,
                 ticks: {
                     fontColor: chartsFontColor
                 },
@@ -357,7 +369,7 @@ function afterResizing(){
         }
     };
 
-    myBarChart2 = new Chart(ctx2, {
+    myBarChart3 = new Chart(ctx2, {
         type: 'bar',
         data: barChartData2,
         options: options

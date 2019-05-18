@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <link rel="icon" href="src/icon.png" type="image/x-icon" /> -->
+    <link rel="icon" href="src/images/eta-symbol-b.png" type="image/x-icon" />
     <title>ETA Central</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
@@ -27,147 +27,188 @@
 </head>
 <body>
     <div class="page-container h-100">
-        <div class="w-100 background-dark-blue" style="height: 25px; position: absolute; bottom: 0; z-index: 0;"></div>
-        <!-- Side bar -->
-        <div class="container-fluid no-gutters h-100">
-            <div class="row h-100">
-                <nav class="d-none d-sm-block sidebar background-dark-light-blue" style="width: 95px;">
+        <div class="w-100 background-nav-bar-bottom" id="page-bottom-bar"></div>
+
+        <div class="h-100 w-100">
+            <div class="row-item h-100 background-background">
+                <!-- Side bar -->
+                <nav class="nav-size-dynamic p-fixed background-nav-gradient h-100">
                     <div class="h-100" style="position: relative;">
-                        <ul class="nav flex-column">
-                        <li class="w-100 sidebar-logo" >
-                            <img src="src/images/eta-symbol.png" alt="Card image cap" width="100%">
-                        </li>
-                        <li class="w-100 sidebar-item" >
-                            <a class="active color-white" href="#">
-                                <img src="src/images/production-icon-t.png" alt="Card image cap" width="100%">
+                        <ul class="nav flex-column color-white font-12" id="sidebar-list">
+                            <li class="w-100 sidebar-logo" >
+                                <img src="src/images/eta-symbol.png" width="100%">
+                            </li>
+                            <li class="w-100 sidebar-item" >
+                                <img class="nav-image nav-icon-display-dynamic" src="src/images/production-icon-t.png" width="100%">
                                 <p align="center">Production</p>
-                            </a>
-                        </li>
-                        <li class="w-100 sidebar-item">
-                            <a class="active color-white" href="#">
-                                <img src="src/images/inventory-icon-t.png" alt="Card image cap" width="100%">
+                            </li>
+                            <li class="w-100 sidebar-item" style="align-content: center;">
+                                <img class="nav-image nav-icon-display-dynamic" src="src/images/inventory-icon-t.png" width="100%">
                                 <p align="center">Inventory</p>
-                            </a>
-                        </li>
-                        <li class="w-100 sidebar-item">
-                            <a class="active color-white" href="#">
-                                <img src="src/images/purchasing-icon-t.png" alt="Card image cap" width="100%">
+                            </li>
+                            <li class="w-100 sidebar-item">
+                                <img class="nav-image nav-icon-display-dynamic" src="src/images/purchasing-icon-t.png" width="100%">
                                 <p align="center">Purchasing</p>
-                            </a>
-                        </li>
-                        <li class="w-100 sidebar-item">
-                            <a class="active color-white" href="#">
-                                <img src="src/images/sales-orders-icon-t.png" alt="Card image cap" width="100%">
-                                <p align="center">Sales Orders</p>
-                            </a>
-                        </li>
-                        <li class="w-100" style="position: absolute; bottom: 0;">
-                            <div class="d-flex">
-                                <div class="w-33 p-1">
-                                    <a class="active color-white" href="#">
-                                        <img src="src/images/settings-icon.png" alt="Card image cap" width="100%">
-                                    </a>
+                            </li>
+                            <li class="w-100 sidebar-item">
+                                <img class="nav-image nav-icon-display-dynamic" src="src/images/sales-orders-icon-t.png" width="100%">
+                                <p align="center" style="white-space: nowrap;">Sales Orders</p>
+                            </li>
+                            <li class="w-100" style="position: absolute; bottom: 0;">
+                                <div class="d-flex">
+                                    <div class="w-33 p-1">
+                                        <a class="active color-white" href="#">
+                                            <img src="src/images/settings-icon.png" width="100%">
+                                        </a>
+                                    </div>
+                                    <div class="w-33 p-1">
+                                        <a class="active color-white" href="#">
+                                            <img src="src/images/support-icon.png" alt="Card image cap" width="100%">
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="w-33 p-1">
-                                    <a class="active color-white" href="#">
-                                        <img src="src/images/support-icon.png" alt="Card image cap" width="100%">
-                                    </a>
-                                </div>
-                            </div>
-                            
-                        </li>
+                                
+                            </li>
                         </ul>
                     </div>
                 </nav>
-                <!-- Dashboard Area -->
-                <div class = "background-light-gray px-4 pb-3" id="area-dashboard" style="width: calc(50% - 95px); height: calc(100% - 25px);">
-                    <!-- col 1 row 1 -->
-                    <div class="d-flex" style="height: 80px; align-items: center; ">
-                        <!-- launch button -->
-                        <div class="">
-                            <button type="button" class="btn raised w-100 background-blue color-white" style="display:table-cell; vertical-align: middle;">Launch</button>
+
+                <div class="dynamic-margin row-item page-size-dynamic background-background h-100" style="overflow-y:auto; min-height: 650px;">
+                    <nav class="mobile-navbar navbar navbar-expand-lg background-nav-gradient-right w-100">
+                        <a class="navbar-brand" href="#">
+                            <img class="h-100" src="src/images/eta-symbol.png" height="54px"  width="54px" alt="">
+                        </a>
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <img class="h-100" src="src/images/toggler-icon-hamburger-t.png" height="30px"  width="30px" alt="">
+                        </button>
+                        <div class="collapse navbar-collapse background-nav-gradient-right w-100" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                            <a class="nav-item nav-link color-white active" href="#">Production</a>
+                            <a class="nav-item nav-link color-white" href="#">Inventory</a>
+                            <a class="nav-item nav-link color-white" href="#">Purchasing</a>
+                            <a class="nav-item nav-link color-white" href="#">Sales Orders</a>
+                            </div>
                         </div>
-                        <div class="w-100 pl-4 pt-3">
-                            <h1 align="left" class="font-roboto-bold h-100 w-100 " id="page-header-1">Sales Order Central</h1>
+                    </nav>
+                    <!-- Dashboard Area -->
+                    <div class = "page-half page-height background-background w-100 px-3 pb-3" id="area-dashboard">
+                        <!-- header section -->
+                        <div class="header-container d-flex pt-2">
+                            <div class="background-header-button" style="border-radius: 3px;">
+                                <button type="button" class="font-roboto btn h-100 color-white background-header-button" id="launch-btn">Launch</button>
+                            </div>
+                            <div class="font-roboto w-100 color-gray" id="dashboard-header">
+                                <h1 align="center" class="title-font-dyanmic d-inline-block" style="vertical-align: middle;">Sales Orders</h1>
+                            </div>
+                        </div>
+
+                        <div class="charts-container d-flex w-100">
+                            <div class= "w-100">
+                                <div class="d-flex h-50 pb-3 pt-3">
+
+                                    <!-- doughnut container -->
+                                    <div class="h-100 mr-2 background-white" style="width: calc(50% - 8px);">
+                                        <div class="d-flex flex-column h-100">
+                                            <div class="h-15 w-100 pl-4 background-dashboard-headers display-table">
+                                                <h4 class="header-font-dyanmic color-gray display-table-cell-middle" id="chart-header-1">Current Demand</h4>
+                                            </div>
+                                            <div class="h-85 w-100" id="chart-doughnut-container">
+                                                <canvas id="sales-orders-chart-pie"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- square-bar chart container -->
+                                    <div class="h-100 ml-2 background-white" style="width: calc(50% - 8px);">
+                                        <div class="d-flex flex-column h-100 w-100">
+                                            <div class="h-15 w-100 pl-4 background-dashboard-headers display-table">
+                                                <h4 class="header-font-dyanmic color-gray display-table-cell-middle" id="chart-header-2">Quotes/Sales Orders</h4>
+                                            </div>
+                                            <div class="h-85 w-100" id="chart-bar-sm-container">
+                                                <canvas id="sales-orders-chart-bar2"></canvas> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex h-50">
+                                    <!-- long-bar chart container -->
+                                    <div class="h-100 w-100 background-white">
+                                        <div class="d-flex flex-column h-100">
+                                            <div class="h-15 w-100 pl-4 background-dashboard-headers display-table">
+                                                <h4 class="header-font-dyanmic color-gray display-table-cell-middle" id="chart-header-3">Current Demand - Next 3 Months</h4>
+                                            </div>
+                                            <div class="h-85 w-100" id="chart-bar-container">
+                                                <canvas class="background-white" id="sales-orders-chart-bar"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div style="height: calc(100% - 80px);">
-                        <!-- col 1 row 2 -->
-                        <div class="d-flex h-50 pb-3 pt-3">
-                            <!-- doughnut container -->
-                            <div class="h-100 mr-2 background-white" style="width: calc(50% - 8px);">
-                                <div class="d-flex flex-column h-100">
-                                    <div class="h-15 w-100 pl-4 background-dashboard-headers display-table">
-                                        <h4 class="color-gray display-table-cell-middle" id="chart-header-1">Current Demand</h4>
-                                    </div>
-                                    <div class="h-85 w-100" id="chart-doughnut-container">
-                                        <canvas id="sales-orders-chart-pie"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- square-bar chart container -->
-                            <div class="h-100 ml-2 background-white" style="width: calc(50% - 8px);">
-                                <div class="d-flex flex-column h-100 w-100">
-                                    <div class="h-15 w-100 pl-4 background-dashboard-headers display-table">
-                                        <h4 class="color-gray display-table-cell-middle" id="chart-header-2">Quotes/Sales Orders</h4>
-                                    </div>
-                                    <div class="h-85 w-100" id="chart-bar-sm-container">
-                                        <canvas id="sales-orders-chart-bar2"></canvas> 
-                                    </div>
-                                </div>
+                    <!-- Table Area -->
+                    <div class = "page-half page-height background-background w-100 pt-3 px-3" id="area-dashboard">
+                        <!-- col 2 row 1 -->
+                        <div class="table-header flex-row h-5">
+                            <h4 class="font-roboto color-gray d-inline-block" style="vertical-align: middle;">Open Quotes</h4>
+                        </div>
+                        <div class="flex-row h-45 pb-3">
+                            <div class="table-container tableFixHead no-padding w-100 h-100" id="sales-orders-table-quotes">
+                                <table class="table table-font-dynamic table-hover table-sm background-white h-100">
+                                    <thead class="background-dashboard-headers">
+                                        <tr><th scope="col">#</th><th scope="col">Quote ID</th><th scope="col">Part Num</th><th scope="col">Qty</th><th scope="col">PPU</th><th scope="col">Customer</th><th scope="col">Prime</th><th scope="col">Quote Date</th><th scope="col">Due Date</th></tr>
+                                    </thead>
+                                    <tbody style="height: 10px !important; overflow: scroll;">
+                                        <tr><td>1</td><td>F00001547</td><td>A-201-B</td><td>150</td><td>$110.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>2</td><td>F00001547</td><td>G-110</td><td>1000</td><td>$102.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>3</td><td>F00001547</td><td>A-100-C</td><td>300</td><td>$94.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>4</td><td>F00001548</td><td>A-001</td><td>50</td><td>$102.00</td><td>CaseyDumb</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>5</td><td>F00001549</td><td>A-201-B</td><td>125</td><td>$65.00</td><td>Comp C Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>6</td><td>F00001550</td><td>G-100</td><td>100</td><td>$108.00</td><td>Comp D Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>7</td><td>F00001551</td><td>A200-C</td><td>150</td><td>$102.99</td><td>Jacob Gay Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>8</td><td>F00001551</td><td>C-100</td><td>103</td><td>$169.00</td><td>Comp E Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>9</td><td>F00001552</td><td>B-210-A</td><td>550</td><td>$86.00</td><td>Comp F Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>10</td><td>F00001553</td><td>A201-B</td><td>100</td><td>$112.00</td><td>Comp G Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>11</td><td>F00001554</td><td>A201-B</td><td>121</td><td>$98.00</td><td>Comp H Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>12</td><td>F00001555</td><td>A200-A</td><td>75</td><td>$147.50</td><td>Comp I Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>13</td><td>F00001556</td><td>G100</td><td>34</td><td>$153.00</td><td>Comp J Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    <!-- col 1 row 3 -->
-                    <div class="d-flex h-50">
-                        <!-- long-bar chart container -->
-                        <div class="h-100 w-100 background-white">
-                            <div class="d-flex flex-column h-100">
-                                <div class="h-15 w-100 pl-4 background-dashboard-headers display-table">
-                                    <h4 class="color-gray display-table-cell-middle" id="chart-header-3">Current Demand - Next 3 Months</h4>
-                                </div>
-                                <div class="h-85 w-100" id="chart-bar-container">
-                                    <canvas class="background-white" id="sales-orders-chart-bar"></canvas>
-                                </div>
+                        <!-- col 2 row 2 -->
+                        <div class="table-header flex-row h-5">
+                            <h4 class="font-roboto color-gray d-inline-block" style="vertical-align: middle;">Current Orders</h4>
+                        </div>
+                        <div class="flex-row h-45 pb-3">
+                            <div class="table-container tableFixHead no-padding w-100 h-100" id="sales-orders-table-quotes">
+                                <table class="table table-font-dynamic table-hover table-sm background-white h-100">
+                                    <thead class="background-white">
+                                        <tr><th scope="col">#</th><th scope="col">Quote ID</th><th scope="col">Part Num</th><th scope="col">Qty</th><th scope="col">PPU</th><th scope="col">Customer</th><th scope="col">Prime</th><th scope="col">Quote Date</th><th scope="col">Due Date</th></tr>
+                                    </thead>
+                                    <tbody style="height: 10px !important; overflow: scroll;">
+                                        <tr><td>1</td><td>F00001547</td><td>A-201-B</td><td>150</td><td>$110.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>2</td><td>F00001547</td><td>G-110</td><td>1000</td><td>$102.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>3</td><td>F00001547</td><td>A-100-C</td><td>300</td><td>$94.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>4</td><td>F00001548</td><td>A-001</td><td>50</td><td>$102.00</td><td>CaseyDumb</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>5</td><td>F00001549</td><td>A-201-B</td><td>125</td><td>$65.00</td><td>Comp C Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>6</td><td>F00001550</td><td>G-100</td><td>100</td><td>$108.00</td><td>Comp D Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>7</td><td>F00001551</td><td>A200-C</td><td>150</td><td>$102.99</td><td>Jacob Gay Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>8</td><td>F00001551</td><td>C-100</td><td>103</td><td>$169.00</td><td>Comp E Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>9</td><td>F00001552</td><td>B-210-A</td><td>550</td><td>$86.00</td><td>Comp F Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>10</td><td>F00001553</td><td>A201-B</td><td>100</td><td>$112.00</td><td>Comp G Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>11</td><td>F00001554</td><td>A201-B</td><td>121</td><td>$98.00</td><td>Comp H Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>12</td><td>F00001555</td><td>A200-A</td><td>75</td><td>$147.50</td><td>Comp I Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                        <tr><td>13</td><td>F00001556</td><td>G100</td><td>34</td><td>$153.00</td><td>Comp J Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                <!-- Table Area -->
-                <div class = "container-fluid no-gutters background-light-gray" id="area-dashboard" style="width: 50%; height: calc(100% - 25px);">
-                    <!-- col 2 row 1 -->
-                    <div class="row h-5">
-                        <h4>Open Quotes</h4>
-                    </div>
-                    <div class="row h-45">
-                        <div class="tableFixHead no-padding w-100 h-100" id="sales-orders-table-quotes">
-                            <table class="table table-hover table-sm background-white h-100">
-                                <thead class="background-white">
-                                    <tr><th scope="col">#</th><th scope="col">Quote ID</th><th scope="col">Part Num</th><th scope="col">Qty</th><th scope="col">PPU</th><th scope="col">Customer</th><th scope="col">Prime</th><th scope="col">Quote Date</th><th scope="col">Due Date</th></tr>
-                                </thead>
-                                <tbody style="height: 10px !important; overflow: scroll;">
-                                    <tr><td>1</td><td>F00001547</td><td>A-201-B</td><td>150</td><td>$110.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>2</td><td>F00001547</td><td>G-110</td><td>1000</td><td>$102.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>3</td><td>F00001547</td><td>A-100-C</td><td>300</td><td>$94.00</td><td>Comp A Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>4</td><td>F00001548</td><td>A-001</td><td>50</td><td>$102.00</td><td>CaseyDumb</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>5</td><td>F00001549</td><td>A-201-B</td><td>125</td><td>$65.00</td><td>Comp C Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>6</td><td>F00001550</td><td>G-100</td><td>100</td><td>$108.00</td><td>Comp D Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>7</td><td>F00001551</td><td>A200-C</td><td>150</td><td>$102.99</td><td>Jacob Gay Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>8</td><td>F00001551</td><td>C-100</td><td>103</td><td>$169.00</td><td>Comp E Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>9</td><td>F00001552</td><td>B-210-A</td><td>550</td><td>$86.00</td><td>Comp F Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>10</td><td>F00001553</td><td>A201-B</td><td>100</td><td>$112.00</td><td>Comp G Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>11</td><td>F00001554</td><td>A201-B</td><td>121</td><td>$98.00</td><td>Comp H Inc</td><td>1</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>12</td><td>F00001555</td><td>A200-A</td><td>75</td><td>$147.50</td><td>Comp I Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                    <tr><td>13</td><td>F00001556</td><td>G100</td><td>34</td><td>$153.00</td><td>Comp J Inc</td><td>0</td><td>2019-04-02</td><td>2019-06-01</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- col 2 row 2 -->
-                    <div class="row h-50">
-                            <div class="no-padding w-100 border-dev" id="sales-orders-table-quotes"></div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </div>

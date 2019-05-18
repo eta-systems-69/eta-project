@@ -1,18 +1,84 @@
 
+
+/* ----media queries------------------------------------------------------------------------ */
+
+/* decrease font sizes 1400px */
+@media only screen and (max-width: 1400px) {
+    .table-font-dynamic { font-size: 12px !important; }
+    .header-font-dyanmic { font-size: 16px !important; }
+    .title-font-dyanmic { font-size: 32px !important; }
+}
+
+/* page below 500px, lower fonts, remove sidebar */
+@media only screen and (max-width: 500px) {
+    .nav-size-dynamic { display: none; }
+    .page-size-dynamic { width: 100% !important; }
+    .dynamic-margin { margin-left: 0px !important;}
+    /* display new navbar */
+    .mobile-navbar { display: flex !important; }
+    /* shrink header, reduce page height */
+    .header-container { height: 40px !important; }
+    .charts-container { height: calc(100% - 40px) !important; }
+
+    .table-font-dynamic { font-size: 10px !important; }
+    .header-font-dyanmic { font-size: 12px !important; }
+    .title-font-dyanmic { font-size: 20px !important; }
+}
+
+/* change display of navbar icons (650px, width to half; 500px display none) */
+/* also make page scroll, min height set to 650, just need to remove bottom bar */
+@media only screen and (max-height: 650px) {
+    .nav-icon-display-dynamic { width: 50%; align-content: center; }
+    #page-bottom-bar { display: none; }
+}
+@media only screen and (max-height: 500px) {
+    .nav-icon-display-dynamic { display: none !important; }
+}
+
+/* width below 1100, change page layout to charts on top, tables bottom */
+@media only screen and (max-width: 1100px) {
+    #page-bottom-bar { display: none; }
+    .page-height { height: calc(80% - 25px) !important; }
+    .page-half { width: 100% !important; }
+}
+/* width above 1100, change page layout to row format */
+@media not all and (max-width: 1100px) {
+    .page-height { height: calc(100% - 25px) !important; }
+    .page-half { width: 50% !important; }
+
+}
+
 /* ----page styles-------------------------------------------------------------------------- */
-
 html,body { height:100%; }
-
 .no-padding {
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
-
-h1 {
-    margin:0;
+h1 { margin:0; }
+h2 { margin:0; }
+h3 { margin:0; }
+h4 { margin:0; }
+h5 { margin:0; }
+h6 { margin:0; }
+.row-item { margin: 0px;
+    display: flex;
+    flex-wrap: wrap;
 }
+.p-fixed { position: fixed; }
+.page-height {
+    height: calc(100% - 25px);
+}
+#page-bottom-bar {
+    height: 25px; 
+    position: absolute; 
+    bottom: 0; 
+    z-index: 0;
+}
+.page-size-dynamic { width: calc(100% - 95px); }
+.nav-size-dynamic { width: 95px; }
+.dynamic-margin { margin-left: 95px;}
 
-/* ----fonts-------------------------------------------------------------------------- */
+/* ----fonts-------------------------------------------------------------------------------- */
 @font-face {
     font-family: 'Roboto';
     src: url('src/fonts/Roboto-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
@@ -23,203 +89,127 @@ h1 {
     font-family: 'Roboto Bold';
     src: url('src/fonts/Roboto-Bold.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }  
-
-.font-20 {
-    font-size: 20px;
-}
-
 .font-bookman {
     font-family: Bookman Old Style; 
     font-weight: 700;
 }
-
-.font-roboto {
-    font-family: 'Roboto', sans-serif;
-}
-
-.font-roboto-medium {
-    font-family: 'Roboto Medium', sans-serif;
-}
-
+.font-roboto { font-family: 'Roboto', sans-serif; }
+.font-roboto-medium { font-family: 'Roboto Medium', sans-serif; }
 .font-roboto-bold {
     font-family: 'Roboto Bold', sans-serif;
     font-weight: bold; 
 }
 
+.font-20 { font-size: 20px; }
+.font-12 { font-size: 12px !important; }
 
-/* ----heights-------------------------------------------------------------------------- */
-.h-85 {
-    height: 85%;
-}
+/* ----heights------------------------------------------------------------------------------ */
+.h-85 { height: 85%; }
+.h-60 { height: 60%; }
+.h-45 { height: 45%; }
+.h-44 { height: 44%; }
+.h-43 { height: 43%; }
+.h-40 { height: 40%; }
+.h-15 { height: 15%; }
+.h-14 { height: 14%; }
+.h-11 { height: 11%; }
+.h-10 { height: 10%; }
+.h-5 { height: 5%; }
+.w-45 { width: 45%; }
+.w-33 { width: 33%; }
 
-.h-60 {
-    height: 60%;
-}
+/* ----colors------------------------------------------------------------------------------- */
+.color-dark-blue { color: #003791; }
+.color-white { color: #fcfcfc; }
+.color-gray { color: rgb(67, 75, 83); }
+.background-light-blue { background:#8ab4d8; }
+.background-blue { background:#396992; }
+.background-white { background:#ffffff; }
+.background-background { background:#e6e9ec; }
+.background-dashboard-headers { background:#abc0d6; }
+.background-nav-bar-bottom { background:#14395c; }
+.background-nav-gradient { background-image: linear-gradient(#396992 , #14395c); }
+.background-nav-gradient-right { background-image: linear-gradient(to left, #396992 , #14395c); }
+.background-header-button { background-image: linear-gradient(#6897c0 , #2a5a86); }
+.background-header-title { background-image: linear-gradient(to right,#abc0d6 , #e6e9ec); }
 
-.h-45 {
-    height: 45%;
-}
-
-.h-45 {
-    height: 45%;
-}
-.h-44 {
-    height: 44%;
-}
-.h-43 {
-    height: 43%;
-}
-
-.h-40 {
-    height: 40%;
-}
-.h-15 {
-    height: 15%;
-}
-
-.h-14 {
-    height: 14%;
-}
-
-.h-11 {
-    height: 11%;
-}
-
-.h-5 {
-    height: 5%;
-}
-
-.h-10 {
-    height: 10%;
-}
-
-.w-45 {
-    width: 45%;
-}
-
-.w-33 {
-    width: 33%;
-}
-
-/* ----colors-------------------------------------------------------------------------- */
-.color-dark-blue {
-    color: #003791;
-}
-
-.color-white {
-    color: #fcfcfc;
-}
-
-.color-gray {
-    color: #48505A;
-}
-
-.background-light-blue {
-    background:#8ab4d8;
-}
-
-.background-blue {
-    background:#396992;
-}
-
-.background-light-gray {
-    background:#e7ecee;
-}
-
-.background-dashboard-headers {
-    background:#c7d4e2;
-}
-
-.background-white {
-    background:#ffffff;
-}
-
-.background-dark-blue {
-    background:#14395c;
-}
-
-.background-dark-light-blue {
-    background-image: linear-gradient(#396992 , #14395c);
-}
-
-
-.border-dev {
-    border: solid 1px red;
-}
-
+.border-dev { border: solid 1px red; }
 
 /* ----sidebar css-------------------------------------------------------------------------- */
-
-.sidebar-item, .sidebar-logo {
-    padding: 10px;
+.sidebar-item, .sidebar-logo { padding: 10px; }
+ul.nav > .sidebar-item > a > p { font-size: 13px !important; }
+ul.nav > .sidebar-item > a:hover { color: #003791 !important; }
+ul.nav > .sidebar-item > a:hover { color: #003791 !important; }
+ul.nav > .sidebar-item:hover { background-color: rgba(115, 145, 165, 0.678) !important; }
+ul.nav > .sidebar-item-selected { background-color: rgba(115, 145, 165, 0.678) !important; }
+.nav-image {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
-
-ul.nav > .sidebar-item > a > p { 
-    font-size: 13px !important; 
+.mobile-navbar { display: none; height: 70px; }
+.mobile-navbar { padding: 0px !important; }
+.mobile-navbar > a { padding: 8px;}
+.mobile-navbar > button { margin-right: 8px;}
+.mobile-navbar > .navbar-collapse { padding: 16px;}
+.navbar-brand {
+    display: inline-block;
+    padding: 0px;
 }
-
-ul.nav > .sidebar-item > a:hover { 
-    color: #003791 !important; 
-}
-
-ul.nav > .sidebar-item > a:hover { 
-    color: #003791 !important; 
-}
-
-ul.nav > .sidebar-item:hover { 
-    background-color: rgba(115, 145, 165, 0.678) !important; 
-}
-
-ul.nav > .sidebar-item-selected { 
-    background-color: rgba(115, 145, 165, 0.678) !important; 
-}
-
-/* ----header css-------------------------------------------------------------------------- */
-
-.display-table {
-    display: table;
-}
-
+/* ----header css--------------------------------------------------------------------------- */
+.display-table { display: table; }
 .display-table-cell-middle {
     display:table-cell; 
     vertical-align:middle;
 }
-
-
-/* ----form-control-------------------------------------------------------------------------- */
+div#dashboard-header:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: 1em;
+}
+.table-header:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: 1em;
+}
+.header-container { height: 80px; }
+.charts-container { height: calc(100% - 80px); }
+/* ----form-control------------------------------------------------------------------------- */
 .btn {
-    padding: 14px 24px;
     border: 0 none;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-
-.btn.sharp {
-    border-radius:0;
-}
-
-.btn.raised {
-	box-shadow: 0 3px 0 0 #032835;
-}
-
-.btn.raised:active, .btn.raised.active  {
-    color: white !important;
+.btn:active, .btn.active  {
+    color: white;
 	background: #3382cc;
-	box-shadow: 0 3px 0 0 #3382cc;
-	margin-bottom: -2px;
-	margin-top: 2px;
 }
+.btn:hover, .button:focus  {
+    color: white;
+	background: #3382cc;
+}
+.btn:hover:active {
+    color: white;
+	background: #29659e;
+}
+#launch-btn { border-radius: 3px; width: 150px; }
 
-/* ----table formatting-------------------------------------------------------------------------- */
-
+/* ----table formatting--------------------------------------------------------------------- */
 .tableFixHead    { overflow-y: auto; height: 100px; }
 .tableFixHead th { position: sticky; top: 0; }
+table  { 
+    border-collapse: collapse; 
+    width: 100%;
+    margin: 0px !important;
+    font-size: 14px;
+}
+th     { background:#abc0d6; } /* same as background-dashboard-headers */
 
-/* Just common table stuff. Really. */
-table  { border-collapse: collapse; width: 100%; }
-th, td { padding: 8px 16px; }
-th     { background:#ffffff; }
   
 
 
