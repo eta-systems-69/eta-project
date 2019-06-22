@@ -7,11 +7,14 @@ import { AppComponent } from './pages/index/app.component';
 import { SideBarComponent } from './components/sidebar/sidebar.component';
 import { SideBarLIComponent } from './components/sidebar-li/sidebar-li.component';
 
+import { LoginComponent } from '../login/pages/login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SideBarComponent,
-    SideBarLIComponent
+    SideBarLIComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
