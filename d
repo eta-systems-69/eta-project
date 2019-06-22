@@ -1,0 +1,65 @@
+[33mcommit 6f3e53449c8a2b0c9a2eb36c971c78a50ddc3eec[m[33m ([m[1;36mHEAD -> [m[1;32mhome-page[m[33m, [m[1;31morigin/home-page[m[33m, [m[1;32mnew-home-page-cuz-caseys-a-faggot[m[33m, [m[1;32mcreate[m[33m)[m
+Author: Hal Carrigan <harold.carrigan@asu.edu>
+Date:   Tue May 14 22:10:05 2019 -0700
+
+    more layout stuff on dashbaord side. Will finish header/launch btn tomorrow
+
+[33mcommit b0ab6a1e789491c529a8ef6d1fccd8193b52ebf0[m
+Author: Hal Carrigan <harold.carrigan@asu.edu>
+Date:   Mon May 13 23:55:02 2019 -0700
+
+    lot of styling for dashboard area of homepage-salesOrders
+
+[33mcommit f123951748624dfbe075cf94017b1809589d6d02[m
+Author: Hal Carrigan <harold.carrigan@asu.edu>
+Date:   Sun May 12 12:47:50 2019 -0700
+
+    fixed height class inconsistencies
+
+[33mcommit 35d32a0fe8740a596dc9cf786a5120af238b0596[m
+Author: Hal Carrigan <harold.carrigan@asu.edu>
+Date:   Sun May 12 12:46:00 2019 -0700
+
+    fixed scroll issue
+
+[33mcommit c34a9adcb1414c2ec2cbddd337f425214088af2a[m
+Author: Hal Carrigan <harold.carrigan@asu.edu>
+Date:   Sun May 12 12:44:37 2019 -0700
+
+    added first table to sales-orders, refined charts
+
+[33mcommit e4b04f893e89a32195abe94da1c167d2b28759c2[m
+Author: Hal Carrigan <harold.carrigan@asu.edu>
+Date:   Sat May 11 23:20:56 2019 -0700
+
+    sales orders mini dashboard
+
+[33mcommit 9e7df864191068a3cdff16b18f05914581e79268[m
+Author: Hal Carrigan <harold.carrigan@asu.edu>
+Date:   Sat May 11 00:01:13 2019 -0700
+
+    homepage side-bar lot of progress
+
+[33mcommit 9e06b329316b4544abba961bcc6d409ae9fac929[m
+Author: Hal Carrigan <harold.carrigan@asu.edu>
+Date:   Thu May 9 22:48:04 2019 -0700
+
+    ETA central sidebar and icons
+
+[33mcommit 953cccccc83d6661a5234c66a532becc84e1e0ae[m
+Author: Hal Carrigan <harold.carrigan@asu.edu>
+Date:   Thu May 9 19:58:10 2019 -0700
+
+    reorganized
+
+[33mcommit a595da4b699e94c79188d1a1a5809866eb3615f7[m
+Author: Hal Carrigan <harold.carrigan@asu.edu>
+Date:   Wed May 8 22:09:47 2019 -0700
+
+    initial page
+
+[33mcommit 26c9b73987350da720daf1c415195db986c4279e[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Jake Gonsalves <gonsalves.jake@gmail.com>
+Date:   Wed May 8 21:12:06 2019 -0700
+
+    initial commit
