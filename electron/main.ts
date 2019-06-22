@@ -14,17 +14,17 @@ app.on('activate', () => {
 
 function createWindow() {
     // win = new BrowserWindow({ fullscreen: true })
-    win = new BrowserWindow({ width: 800, height: 600 })
+    win = new BrowserWindow({ width: 1280, height: 720 })
 
     win.loadURL(
         url.format({
-            pathname: path.join(__dirname, `/../../dist/angular-electron/index.html`),
+            pathname: path.join(__dirname, `/../../dist/eta-project/index.html`),
             protocol: 'file:',
             slashes: true,
         })
     )
 
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools()
 
     win.on('closed', () => {
         win = null
